@@ -789,6 +789,52 @@ namespace RealLifeExemples_2
 				return "Neither all are equal or different";
 			}
 		}
+		
+		public static string RemoveUrlAnchor(string url) // Create a function that returns the url with anything after the anchor (#) removed.
+		{                                                                             // Or  {
+			if (url.Contains("#"))                                                //      return url.Split('#')[0];
+			{                                                                     //     }
+				return url.Substring(0, url.IndexOf('#') + 1).TrimEnd('#');   //
+			}                                                                     //
+
+			return url;
+		}
+		
+
+		// Create a function that takes a Roman numeral as its argument and returns its value as a numeric decimal integer.
+		private static readonly Dictionary<char, int> literals = new Dictionary<char, int>                    // Or    public static int Solution(string roman)
+									          {                                   //         {
+									            {'I', 1},                         //          return roman.Replace("CM", "DCCCC")
+									            {'V', 5},                         //                      .Replace("CD", "CCCC")
+									            {'X', 10},                        //                      .Replace("XC", "LXXXX")
+									            {'L', 50},                        //                      .Replace("XL", "XXXX")
+									            {'C', 100},                       //                      .Replace("IX", "VIIII")
+									            {'D', 500},                       //                      .Replace("IV", "IIII")
+									            {'M', 1000},                      //                      .Sum(c => Translate(c));
+									          };                                  //          }
+			                                                                                              //
+			public static int Solution(string roman)                                                      //       public static int Translate(char c)
+		{                                                                                                     //         {
+				int result = 0;                                                                       //           switch (c)
+			int max = 0;                                                                                  //            {
+						                                                                      //               case 'I': return 1;
+			foreach (var c in roman.Reverse())                                                            //               case 'V': return 5;
+			{                                                                                             //               case 'X': return 10;
+				int value = literals[c];                                                              //               case 'L': return 50;
+						       						                      //               case 'C': return 100;
+				if (value < max)                                                                      //               case 'D': return 500;
+				{                                                                                     //               case 'M': return 1000;
+					result -= value;                                                              //               default: return 0;
+				}                                                                                     //             }
+					else                                                                          //         }
+					{                                                                             //
+						result += value;                                                      //
+						max = value;
+					}
+				}
+				return result;
+			}
+	}
 
 	}
 }
