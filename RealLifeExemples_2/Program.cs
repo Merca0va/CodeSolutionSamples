@@ -873,7 +873,28 @@ namespace RealLifeExemples_2
                                                                                                                                                                       //     }
                  return new string(array);
              }
-
+	
+	
+	
+	   public static Dictionary<char, int> Count(string str) // Create a function that counts all the occurring characters in a string.  If the string is empty, the result should be empty.
+            {                                                          // Or {                                                                   // Or {
+                var result = new Dictionary<char, int>();              //       Dictionary<char, int> dic = new  Dictionary<char, int>();        //      
+                                                                       //                                                                        //      return str.GroupBy(c => c).ToDictionary(g => g.Key, g => g.Count());
+                foreach (char c in str)                                //       foreach(char c in str)                                           //
+                {                                                      //         {                                                              //    }
+                    int count;                                         //           if(dic.ContainsKey(c))
+                    result.TryGetValue(c, out count);                  //            {
+                    result[c] = count + 1;                             //              dic[c] += 1;
+                }                                                      //            }
+                                                                       //
+                return result;                                         //           else
+            }                                                           //            {
+                                                                        //               dic.Add(c,1);
+                                                                        //            }
+                                                                        //         }
+                                                                        //
+                                                                        //       return dic;
+                                                                        //    }
 
 	}
 }
