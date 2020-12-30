@@ -849,7 +849,7 @@ namespace RealLifeExemples_2
                                                                                                           //    }                                                                                        //           value /= 10;
                                                                                                                                                                                                          //       }
                                                                                                                                                                                                          //      
-                                                                                                                                                                                                         //     return initial == total;
+                                                                                                                                                                                                         //     return init == total;
                                                                                                                                                                                                          //   }
 	
 	     public static string alternateCase(string s) // Create a function which switch every letter in string s from upper to lower and from lower to upper.
