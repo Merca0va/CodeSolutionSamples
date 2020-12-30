@@ -847,10 +847,32 @@ namespace RealLifeExemples_2
                                                                                                           //                                                                                             //          var n = value % 10;
                                                                                                           //       return sum == value;                                                                  //          total += (int)Math.Pow(n, x);  
                                                                                                           //    }                                                                                        //           value /= 10;
-                                                                                                          //       }
-                                                                                                          //      
-                                                                                                          //     return initial == total;
-                                                                                                          //   }
+                                                                                                                                                                                                         //       }
+                                                                                                                                                                                                         //      
+                                                                                                                                                                                                         //     return initial == total;
+                                                                                                                                                                                                         //   }
+	
+	     public static string alternateCase(string s) // Create a function which switch every letter in string s from upper to lower and from lower to upper.
+             {                                                  // Or {                                                                                               // Or {
+                 char[] array = s.ToCharArray();                //       return string.Concat(s.Select(c => char.IsUpper(c) ? char.ToLower(c) : char.ToUpper(c)));    //      string str = null;
+                                                                //    }                                                                                               //      
+                 for (int i = 0; i < array.Length; i++)         //                                                                                                    //      foreach (char c in s)
+                 {                                              //                                                                                                    //       {
+                     char c = array[i];                         //                                                                                                    //         if (Char.IsUpper(c))
+                                                                //                                                                                                    //          {
+                     if (char.IsUpper(c))                       //                                                                                                    //           str += Char.ToLower(c);
+                     {                                          //                                                                                                    //          }
+                         array[i] = char.ToLower(c);                                                                                                                  //    
+                     }                                                                                                                                                //         else
+                                                                                                                                                                      //          {
+                     else                                                                                                                                             //           str +=  Char.ToUpper(c);
+                     {                                                                                                                                                //          }
+                         array[i] = char.ToUpper(c);                                                                                                                  //       }
+                     }                                                                                                                                                //       
+                 }                                                                                                                                                    //       return str;
+                                                                                                                                                                      //     }
+                 return new string(array);
+             }
 
 
 	}
