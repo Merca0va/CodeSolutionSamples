@@ -12,8 +12,8 @@ using static System.Console;
 
 namespace RealLifeExemples_2
 {
-	class Program
-	{
+   class Program
+   {
 		public static string Longest(string s1, string s2)
 		{
 			string s3 = s1 + s2;
@@ -896,6 +896,27 @@ namespace RealLifeExemples_2
                                                                         //       return dic;
                                                                         //    }
 
-	}
+	    public static int TrailingZeros(int n) //Create a function that will calculate the number of trailing zeros in a factorial of a given number.
+            {
+                // 1-4   ==> 0 trailing 0s
+                // 5-9   ==> 1 trailing 0s
+                // 10-14 ==> 2 trailing 0s
+                // 15-19 ==> 3 trailing 0s
+                // 20-24 ==> 4 trailing 0s
+                // 25-29 ==> 6 trailing 0s
+                //   every multiple of 5 adds another 0 (5, 25, 125, 625, etc.)
+    
+                                                      // Or {                                        //  Or {                        // Or {
+                int result = 0;                       //      int result = 0;                        //       int result = 0;        //       return Enumerable.Range(1, (int)Math.Log(n,5)).Sum(x => n / (int)Math.Pow(5,x));
+                int start = 1;                        //                                             //                              //    }
+                                                      //      for (int i = 5; i <= n; i *= 5)        //       while(num > 0)         //
+                while (n >= start)                    //        {                                    //        {
+                {                                     //           result += n/i;                    //           num /= 5;
+                    start *= 5;                       //        }                                    //           zeros += num;
+                    result += (int)n / start;         //                                             //        }
+                }                                     //      return result;                         //      return result;
+                return result;                        //    }                                        //     }
+            }
+    }
 }
                                                                                                                                              
