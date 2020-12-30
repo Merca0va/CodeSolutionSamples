@@ -813,9 +813,9 @@ namespace RealLifeExemples_2
 									            {'M', 1000},                      //                      .Sum(c => Translate(c));
 									          };                                  //          }
 			                                                                                              //
-			public static int Solution(string roman)                                                      //       public static int Translate(char c)
-		{                                                                                                     //         {
-				int result = 0;                                                                       //           switch (c)
+		     public static int Solution(string roman)                                                         //       public static int Translate(char c)
+		      {                                                                                               //         {
+			int result = 0;                                                                               //           switch (c)
 			int max = 0;                                                                                  //            {
 						                                                                      //               case 'I': return 1;
 			foreach (var c in roman.Reverse())                                                            //               case 'V': return 5;
@@ -834,7 +834,24 @@ namespace RealLifeExemples_2
 				}
 				return result;
 			}
-	}
+	             }
+	
+	       public static bool Narcissistic(int value) // Create a function that  return true or false depending upon whether the given number is a Narcissistic number in base 10. Narcissistic Number is a positive number which is the sum of its own digits, each raised to the power of the number of digits in a given base.
+                {                                                                                         // Or {                                                                                        // Or {
+                    var str = value.ToString();                                                           //      double sum = 0;                                                                        //      int x = value.ToString().Length;
+                    return str.Sum(c => Math.Pow(Convert.ToInt16(c.ToString()), str.Length)) == value;    //                                                                                             //      int total = 0;
+                }                                                                                         //       foreach (char item in value.ToString())                                               //      int init = value;
+                                                                                                          //         {                                                                                   //      
+                                                                                                          //           sum += Math.Pow(int.Parse(item.ToString()), (int)value.ToString().Length);        //      while (value >= 1) 
+                                                                                                          //         }                                                                                   //       {
+                                                                                                          //                                                                                             //          var n = value % 10;
+                                                                                                          //       return sum == value;                                                                  //          total += (int)Math.Pow(n, x);  
+                                                                                                          //    }                                                                                        //           value /= 10;
+                                                                                                          //       }
+                                                                                                          //      
+                                                                                                          //     return initial == total;
+                                                                                                          //   }
+
 
 	}
 }
