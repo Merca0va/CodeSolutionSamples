@@ -912,6 +912,30 @@ namespace RealLifeExemples_2
                 }                                     //      return result;                         //      return result;
                 return result;                        //    }                                        //     }
             }
+	
+	   public static int[] SortArray(int[] array) // Create a function that  sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+           {                                                    // Or {
+               List<int> odd = new List<int>();                 //       Queue<int> odds = new Queue<int>(array.Where(e => e%2 == 1).OrderBy(e => e));
+                                                                // 
+               foreach (var number in array)                    //        return array.Select(e => e%2 == 1 ? odds.Dequeue() : e).ToArray();
+               {                                                //    }
+                   if (number % 2 != 0)                         //
+                       odd.Add(number);
+               }
+               int[] oddAr = odd.ToArray();
+               Array.Sort(oddAr);
+      
+      
+               for (int i = 0, j = 0; i < array.Length; i++)
+               {
+                   if (array[i] % 2 != 0)
+                   {
+                       array[i] = oddAr[j];
+                       j++;
+                   }
+               }
+               return array;
+           }
     }
 }
                                                                                                                                              
