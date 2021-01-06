@@ -950,6 +950,43 @@ namespace RealLifeExemples_2
                                                              //     }
             return ' ';                                      //
         }
+	
+	public static string Tickets(int[] people) //Create a function that determines if a till got enough money to serve all customers in line for an item that costs 25, starting with 0. The customers have either 25, 75 or 100 on them.
+        {                                                   // Or  {
+            int twentyFives = 0, fifties = 0;               //       int m25=0; 
+                                                            //       int m50=0;
+            foreach (var bill in people)              //
+            {                                               //       for (int i=0;i<p.Length&m25>=0;i++)
+                switch (bill)                               //        {
+                {                                           //          m25+=(people[i]==25 ? 25 : people[i]==50 ? -25 : m50<50 ? -75 : -25);
+                    case 25:                                //          m50+=(people[i]==25 ? 0  : people[i]==50 ?  50 : m50<50 ?   0 : -50);
+                        ++twentyFives;                      //        }
+                        break;                              //
+                    case 50:                                //        return m25<0 ? "NO" : "YES";
+                        --twentyFives;                      //     }
+                        ++fifties;
+                        break;
+                    case 100:
+                        if (fifties == 0)
+                        {
+                            twentyFives -= 3;
+                        }
+                        else
+                        {
+                            --twentyFives;
+                            --fifties;
+                        }
+                        break;
+                }
+
+                if (twentyFives < 0 || fifties < 0)
+                {
+                    return "NO";
+                }
+            }
+
+            return "YES";
+        }
     }
 }
                                                                                                                                              
