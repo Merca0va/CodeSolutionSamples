@@ -987,6 +987,18 @@ namespace RealLifeExemples_2
 
             return "YES";
         }
+	
+	public static long[] SumDigPow(long a, long b) //Create a function that defines the range [a, b] (inclusive) and outputs a list of the sorted numbers that the Sum of the Digits Raised To The Consecutive Powers equal the number itself.
+        {                                                                                                                   //Or {
+            List<long> values = new List<long>();                                                                           //
+                                                                                                                            //     return Enumerable.Range((int)a, (int)(b - a)).Where(x => x < 10 || x.ToString().ToCharArray().Select((y,i) => Math.Pow(int.Parse(y.ToString()),i+1)).Sum()==x).Select(x=>(long)x).ToArray();       
+            for (long j = a; j <= b; j++)                                                                                   //        
+            {                                                                                                               //   }                 
+                if (j.ToString().Select((c, i) => Math.Pow(Char.GetNumericValue(c), i + 1)).Sum() == j)values.Add(j);       //
+            }                                                                                                               //                             
+                                                                                                                            //     
+            return values.ToArray();                                                                                        //
+        }
     }
 }
                                                                                                                                              
