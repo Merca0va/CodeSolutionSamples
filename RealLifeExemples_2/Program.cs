@@ -936,6 +936,20 @@ namespace RealLifeExemples_2
                }
                return array;
            }
+	
+	public static char FindMissingLetter(char[] array) //Create a method that takes an array of consecutive letters as input and that returns the missing letter in the array.
+        {                                                    //Or  {                                         //  Or {                                                                                                                                     // Or {
+                                                             //      int index = 0;                          //        public static char FindMissingLetter(char[] array) => (char)Enumerable.Range(array[0], 25).First(x => !array.Contains((char)x));   //      char c = arr.First();
+            for (int i = 0; i < array.Length - 1; i++)       //                                              //     }                                                                                                                                     //      char n = arr.Last();
+            {                                                //      while(array[ind+1]-array[ind]==1)       //                                                                                                                                           //      return (char)(n*(n+1)/2 - (c-1)*c/2 - arr.Sum(c => c));
+                if (array[i + 1] - array[i] > 1)             //       {                                                                                                                                                                                   //    }                                                
+                {                                            //         index++;
+                    return (char)(array[i] + 1);             //       }
+                }                                            //    
+            }                                                //       return (char)(array[index]+1);       
+                                                             //     }
+            return ' ';                                      //
+        }
     }
 }
                                                                                                                                              
