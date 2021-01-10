@@ -1059,6 +1059,14 @@ namespace RealLifeExemples_2
             }
         
         }
+	
+	public static string ReverseCapitalize(string str) // Create a function that takes a string of lowercase characters and returns that string reversed and in upper case.
+        {
+            char[] words = str.ToCharArray();
+            Array.Reverse(words);
+
+            return words.ToString().ToUpper();
+        }
     }
 }
                                                                                                                                              
