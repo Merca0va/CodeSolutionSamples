@@ -999,6 +999,21 @@ namespace RealLifeExemples_2
                                                                                                                             //     
             return values.ToArray();                                                                                        //
         }
+	
+	public List<string> wave(string str) //Create a function that turns a string into a Mexican Wave. Return a list that contains that string in multiple iteration equal to its length where an uppercase is found on the next item at the next position. ex: wave("hello") ==> {"Hello", "hEllo", "heLlo", "helLo", "hellO"}
+        {                                                   //  Or {                                                         // Or {
+            List<string> waveList = new List<string>();     //      List<string> waveList = new List<string>();              //      List<string> waveList = new List<string>();
+            for (int i = 0; i < str.Length; i++)            //      string[] a = str.Select(c => c.ToString()).ToArray();    //      for (int i = 0; i < str.Length; i++)
+            {                                               //      for (int i =0; i< a.Length; i++)                         //       {
+                char[] c = str.ToCharArray();               //       {                                                       //         if (str[i] == ' ')
+                if (c[i] != ' ')                            //        if(a[i] != " ")                                        //          {
+                {                                           //         {                                                     //            continue;
+                    c[i] = Char.ToUpper(c[i]);              //           a[i] = a[i].ToUpper();                              //          }
+                    waveList.Add(new string(c));            //           waveList.Add(string.Join("",a));                    //         waveList.Add(str.Substring(0, i) + char.ToUpper(str[i]) + str.Substring(i + 1, str.Length - (i + 1)));
+                }                                           //           a[i] = a[i].ToLower();                              //       }
+            }                                               //         }                                                     //      return waveList;
+            return waveList;                                //      return waveList;                                         //    }   
+        }                                                   //     }
     }
 }
                                                                                                                                              
