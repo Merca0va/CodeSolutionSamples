@@ -1030,6 +1030,35 @@ namespace RealLifeExemples_2
                                                              //
             return list.ToArray();                           //
         }                                                    //
+	
+	public static string Likes(string[] name) // Create a function that return a message showing the persons who liked an item on Facebook.
+        {                                                                                                   //Or {                                                                                                             //Or {
+            if (name.Length == 0)                                                                           //       switch (name.Length)                                                                                      //     string[] pattern = { "no one likes this", "{0} likes this", "{0} and {1} like this", "{0}, {1} and {2} like this", "{0}, {1} and {2} others like this" };
+            {                                                                                               //       {                                                                                                         //     
+                return "no one likes this";                                                                 //       case 0: return "no one likes this";                                                                       //     return name.Length < 4 ? string.Format(pattern[name.Length], name) : string.Format(pattern[4], name[0], name[1], name.Length - 2);
+            }                                                                                               //       case 1: return string.Format("{0} likes this",name[0]);                                                   //   }
+            else if (name.Length == 1)                                                                      //       case 2: return string.Format("{0} and {1} like this", name[0], name[1]);                              
+            {                                                                                               //       case 3: return string.Format("{0}, {1} and {2} like this", name[0], name[1], name[2]);                
+                return name[0] + " likes this";                                                             //       default: return string.Format("{0}, {1} and {2} others like this", name[0], name[1], name.Length - 2);
+            }                                                                                               //                                                                                                             
+                                                                                                            //    
+            else if (name.Length == 2)                                                                      //
+            {                                                                                               //      
+                return name[0] + " and " + name[1] + " like this";                                          //
+            }                                                                                               //     
+                                                                                                            //   
+            else if (name.Length == 3)
+            {
+                return name[0] + ", " + name[1] + " and " + name[2] + " like this";
+            }
+
+            else
+            {
+                int excessNamesCount = name.Length - 2;
+                return name[0] + ", " + name[1] + " and " + excessNamesCount + " others like this";
+            }
+        
+        }
     }
 }
                                                                                                                                              
