@@ -1014,6 +1014,22 @@ namespace RealLifeExemples_2
             }                                               //         }                                                     //      return waveList;
             return waveList;                                //      return waveList;                                         //    }   
         }                                                   //     }
+	
+	public static string[] Solution(string str) // Create a function that splits a string into an array of pairs of two characters. If the string contains an odd number of characters then it replaces the missing second character of the final pair with an underscore ('_').
+        {                                                    // Or {                                                                                                 // Or {
+            if (str.Length % 2 == 1)                         //       if (str.Length % 2 != 0)                                                                       //     return Regex.Matches(str + "_", @"\w{2}").Select(x => x.Value).ToArray();
+            {                                                //        {                                                                                             //    }
+                str += "_";                                  //          str += '_';                                                                                 //
+            }                                                //        }                                                                                             //   
+                                                             //  
+            List<string> list = new List<string>();          //       return Enumerable.Range(0, str.Length / 2).Select(i => str.Substring(2 * i, 2)).ToArray();
+            for (int i = 0; i < str.Length; i += 2)          //    }
+            {                                                //
+                list.Add(str[i].ToString() + str[i + 1]);    //
+            }                                                //
+                                                             //
+            return list.ToArray();                           //
+        }                                                    //
     }
 }
                                                                                                                                              
